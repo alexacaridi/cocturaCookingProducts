@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+    New Perspectives on HTML5, CSS3 and JavaScript 6th Edition
+    Tutorial 13
+    Tutorial Case
+    
+    Coctura Order Page
+    Author: Alexa
+    Date:   1/16/2020
+
+    Filename: co_order.html
+   -->
+   
+   <title>Coctura Orders</title>
+   <meta charset="utf-8" />
+   <link href="co_base.css" rel="stylesheet"  />
+   <link href="co_layout1.css" rel="stylesheet"  />
+   <script src="co_order.js" async></script>
+    
+</head>
+
+<body>
+   <header>
+      <section>
+         <form id="memberForm" method="post" action="">
+            <label for="username">Member Name</label>
+            <input id="username" name="user" type="text" />
+            <label for="password">Password</label>
+            <input type="password" id="password" name="pwd" />
+         </form>
+      </section>
+      <nav id="toptop">
+         <ul>
+            <li><a href="#">registry</a></li>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">stores</a></li>
+            <li><a href="#">recipes</a></li> 
+            <li><a href="#">contact us</a></li>
+         </ul>
+      </nav>
+      <img src="co_logo.png" alt="Coctura" />
+      <nav id="bottomtop">
+         <ul>
+            <li><a href="#">cookware</a></li>
+            <li><a href="#">cutlery</a></li>
+            <li><a href="#">electrics</a></li>
+            <li><a href="#">bakeware</a></li>
+            <li><a href="#">food</a></li>
+            <li><a href="#">bar</a></li> 
+            <li><a href="#">homekeeping</a></li>            
+         </ul>
+      </nav>
+   </header>
+   <section id="summary">
+      <h1>DigiPot<sup>&reg;</sup> Multi-Functional Pressure Cooker</h1>
+      <h2>by <a href="#">Smart Chef</a></h2>
+      <h3>Customer Rating (1,028 votes): <img src="co_stars.png" alt="4.5 stars" /></h3>
+      <img src="co_cooker.png" alt="" />
+      <p>DigiPot is a smart and safe electric pressure cooker, speeding up
+         cooking times while still using up to 70% less energy. The
+         DigiPot multi-use cooker is programmable and can act as a pressure
+         cooker, slow cooker, rice cooker, and steamer. Cook your favorite
+         dishes with the press of a button. A 24-hour timer allows for delayed cooking.
+         Comes in 4-, 6-, and 8-quart models.
+      </p>
+   </section>
+   
+   <section id="orderSection">
+      <form id="orderForm" name="orderForm" method="GET" action="co_payment.html">
+        
+        <table id="orderTable">
+           <caption>Product Order</caption>
+           <tr>
+              <td colspan="3">
+                 <input type="text" id="orderDate" name="orderDate" readonly />
+              </td>
+           </tr>
+           <tr>
+              <td>
+                 <label for="model">Model</label>
+                 <select name="model" id="model">
+                    <option value="89.95">4-Quart ($89.95)</option>
+                    <option value="129.95" selected>6-Quart ($129.95)</option>
+                    <option value="159.95">8-Quart ($159.95)</option>
+                 </select>   
+                 <input type="hidden" id="modelName" name="modelName" />
+              </td>
+              <td class="rightA">
+                 <label for="qty">Qty</label>
+                 <select name="qty" id="qty">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option><option value="6">6</option>
+                    <option value="7">7</option><option value="8">8</option><option value="9">9</option>
+                    <option value="10">10</option>
+                 </select>   
+              </td>                 
+              <td>
+                 <input type="text" name="initialCost" id="initialCost" size="10" readonly />
+              </td>
+           </tr>
+           <tr>
+              <td colspan="2"> 
+                 <fieldset>
+                    <legend>Protection Plan</legend>
+                    <label><input type="radio" id="plan_0" name="protection" value="0" checked /> No protection plan ($0.00 each)</label>
+                    <label><input type="radio" id="plan_1" name="protection" value="11.95" /> 1-year protection plan ($11.95 each)</label>   
+                    <label><input type="radio" id="plan_2" name="protection" value="15.95" /> 2-year protection plan ($15.95 each)</label> 
+                    <label><input type="radio" id="plan_3" name="protection" value="19.95"  /> 3-year protection plan ($19.95 each)</label>
+                 </fieldset>
+                 <input type="hidden" id="protectionName" name="protectionName" />
+              </td>
+              <td>
+                 <input type="text" name="protectionCost" id="protectionCost" size="10" readonly />
+              </td>
+           </tr>        
+           <tr>
+              <td colspan="2" class="rightA">Subtotal</td>
+              <td class="outcell">
+                 <input type="text" name="subtotal" id="subtotal" size="10" readonly />
+              </td>
+           </tr>
+
+           <tr>
+              <td colspan="2" class="rightA">Tax (5%)</td>
+              <td>
+                 <input type="text" name="salesTax" id="salesTax" size="10" readonly />
+              </td>
+           </tr>
+
+           <tr>
+              <td colspan="2" class="rightA">TOTAL</td>
+              <td>
+                 <input type="text" name="totalCost" id="totalCost" size="10" readonly />
+              </td>
+           </tr>
+        </table>
+        <input type="submit" id="buttonAdd" value="add to cart" />
+
+      </form>
+   </section>
+   <footer>
+      <nav id="bottom">
+         <ul>
+            <li><a href="#"><img id="fbicon" src="co_fbicon.png" alt="" />facebook</a></li>
+            <li><a href="#"><img id="twittericon" src="co_twittericon.png" alt="" />twitter</a></li>
+         </ul>
+         <ul>
+            <li><a href="#">help &amp; info</a></li>
+            <li><a href="#">track your order</a></li>
+            <li><a href="#">shipping info</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">gift cards</a></li>
+         </ul>
+         <ul>
+            <li><a href="#">find a store</a></li>
+            <li><a href="#">request a catalog</a></li>
+            <li><a href="#">top picks</a></li>
+         </ul>         
+         <ul>
+            <li><a href="#">manage your account</a></li>
+            <li><a href="#">order history</a></li>
+            <li><a href="#">contact us</a></li>
+         </ul>
+      </nav>
+      <p>Coctura Home Kitchen &copy; 2018 All Rights Reserved</p>
+   </footer>
+</body>
+</html>
